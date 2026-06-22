@@ -1,0 +1,26 @@
+# ══════════════════════════════════════════════════════════════
+# astra-<component_name> — Routing Table
+# ══════════════════════════════════════════════════════════════
+#
+# Machine- AND human-readable. The execution-framework scans this
+# file to suggest skills for matching tasks.
+#
+# Convention:
+#   - type: task category (see execution-framework routing.yaml)
+#   - indicators: keywords an agent might use when describing this task
+#   - skills: Hermes skill name(s) to load on match
+#   - principles: behavioural guidance for the agent
+
+version: 1
+
+routing:
+
+  # ── <Category> ─────────────────────────────────────────
+  - type: <task-category>
+    label: "<human-readable label>"
+    indicators:
+      - <keyword>
+      - <keyword>
+    skills:
+      - name: astra-<component_name>-<sub_skill>
+    principles: "<guidance for how to use this skill>"

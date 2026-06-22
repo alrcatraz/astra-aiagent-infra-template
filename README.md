@@ -11,8 +11,10 @@ Use GitHub's **"Use this template"** button, or clone and copy manually, to boot
 ```
 astra-<name>/
 ├── README.md                ← Standard README skeleton (replace content)
+├── SKILL.md                 ← Hermes skill template with frontmatter (replace placeholders)
 ├── AGENTS.md                ← AI Agent guide (recommended)
-├── LICENSE                  ← MIT (adjust per project)
+├── routing.yaml             ← Execution framework routing table (optional, skills only)
+├── LICENSE                  ← MIT — replace with appropriate licence per project
 ├── .gitignore               ← Base + Python (default) / Node (opt-in)
 │
 ├── config/                  ← Sample config *.yaml.example (recommended)
@@ -33,10 +35,11 @@ astra-<name>/
 | Generic filenames | kebab-case |
 | Config files | YAML > TOML > JSON |
 | Data interchange | JSON |
-| README language | English (main) + Chinese (translation at end) |
+| README language | English (main) + Chinese (full translation at end, preceded by `---`) |
+| SKILL.md frontmatter | `name`, `description`, `version`, `author`, `platforms` — see template |
 | Commit style | Conventional Commits |
 | Dependencies | Declare in `README.md` table + `AGENTS.md`; aggregated in meta-repo `registry.yaml` |
-| Task routing | Prefer `execution-framework` as single entry point (language-independent) over keyword-based triggers in individual skills |
+| Task routing | Prefer `routing.yaml` for execution-framework discovery over keyword-based triggers in individual skills |
 | Versioning | SemVer `X.Y.Z` in SKILL.md frontmatter + `git tag vX.Y.Z`. Local tweaks use `+local.N` suffix; forks use `+author.N`. Registry.yaml stores clean version only (no suffix). See [VERSIONING.md](VERSIONING.md) |
 
 ## How to Use
@@ -50,7 +53,9 @@ astra-<name>/
 | File | Action |
 |:-----|:-------|
 | `README.md` | Replace `{{ ... }}` placeholders with real content |
+| `SKILL.md` | Replace placeholders with skill-specific content |
 | `AGENTS.md` | Write AI Agent workflow guide |
+| `routing.yaml` | Replace placeholders with task indicators; delete if not a skill module |
 | `LICENSE` | Replace with the appropriate license (MIT / CC-BY-SA 4.0 / AGPL-3.0 / …) |
 | `.gitignore` | Remove Python section if not Python; uncomment Node section if Node.js |
 | `pyproject.toml` | Update name, description; add dependencies |
